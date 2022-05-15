@@ -38,5 +38,8 @@ application.
 1. Install all the required packages `npm install`
 2. Run `npm start`
 
+### Solution
+https://beeek3r.github.io/color-canvas/
+
 ### Screenshots
 ![Alt text](https://i.imgur.com/yRxrNYN.png "Screenshot #1")
