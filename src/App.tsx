@@ -4,7 +4,7 @@ import {Box, Typography, Link, ThemeProvider} from '@mui/material'
 import ColorCanvas from "components/ColorCanvas"
 import appTheme from "./themes/appTheme"
 
-const githubUrl = 'https://github.com/Beeek3r/food-discovery' // TODO - Update URL
+const githubUrl = 'https://github.com/Beeek3r/color-canvas'
 
 const App = () => {
   return (
