@@ -15,9 +15,8 @@ approach.
 
 We’re also looking to see that your app doesn’t greatly impact the browser performance.
 You may write this program preferably in Reactjs &amp; Nodejs for use on a web browser which displays
-its results on-screen. Feel free to submit in reply to james.overell@educationhorizons.com. Please
-push source code to a version control repository such as GitHub or Bitbucket. If you could build,
-deploy the app, and submit this as soon as convenient that would positively reflect on you in this
+its results on-screen. Please push source code to a version control repository such as GitHub or Bitbucket. 
+If you could build, deploy the app, and submit this as soon as convenient that would positively reflect on you in this
 application.
 
 ### FAQ
