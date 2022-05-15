@@ -43,7 +43,7 @@ const ColorCanvas: React.FC = () => {
   const [breakSize, setBreakSize] = useState<number>(8)
   const [canvasIsVisible, setCanvasIsVisible] = useState<boolean>(false)
 
-  const handleDownloadCanvas = () => {
+  const handleDownloadCanvas = (): void => {
     if (canvas?.current) {
       const image = canvas.current.toDataURL()
 
@@ -59,7 +59,7 @@ const ColorCanvas: React.FC = () => {
     setShowDownloadConfirmationDialog(false)
   }
 
-  const handleRenderWithImageData = () => {
+  const handleRenderWithImageData = (): void => {
     paintCanvas(
       canvas.current,
       {
@@ -70,7 +70,7 @@ const ColorCanvas: React.FC = () => {
     setCanvasIsVisible(true)
   }
 
-  const handleClearCanvas = () => {
+  const handleClearCanvas = (): void => {
     clearCanvas(canvas.current)
     setRenderStatistics(undefined)
     setCanvasIsVisible(false)
@@ -89,9 +89,7 @@ const ColorCanvas: React.FC = () => {
             style={{color: '#FFFFFF'}}
             classes={{markLabel: 'color-canvas-slider-mark-label'}}
             value={breakSize}
-            onChange={(e, value) => {
-              setBreakSize(value as number)
-            }}
+            onChange={(e, value) => {setBreakSize(value as number)}}
           />
         </Box>
         <Box paddingX={1}>
@@ -154,6 +152,9 @@ const powerOfTwo = (number: number): boolean => {
   return Math.log2(number) % 1 === 0
 }
 
+/**
+ * Paints the provided canvas HTML element with every possibly combination of RGB between (0, 255] but makes skips of <options.breakSize>
+ */
 const paintCanvas = (canvas: HTMLCanvasElement | null, options: {renderStatisticsCallback?: (stats: IRenderStatistics) => void, breakSize: number}): IRenderStatistics | undefined => {
   if (!canvas) {
     console.warn('Cannot retrieve canvas element')
@@ -220,6 +221,9 @@ const paintCanvas = (canvas: HTMLCanvasElement | null, options: {renderStatistic
   }
 }
 
+/**
+ * Clears the provided canvas HTML element
+ */
 const clearCanvas = (canvas: HTMLCanvasElement | null) => {
   if (!canvas) {
     console.warn('Cannot retrieve canvas element')
