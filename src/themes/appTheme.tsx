@@ -1,12 +1,13 @@
 import {createTheme} from "@mui/material"
+import {PRIMARY_COLOR, SECONDARY_COLOR} from "./constants"
 
 const appTheme = createTheme({
   palette: {
     primary: {
-      main: '#17E07D',
+      main: PRIMARY_COLOR,
     },
     secondary: {
-      main: '#D1D0CF',
+      main: SECONDARY_COLOR,
     },
   },
 })

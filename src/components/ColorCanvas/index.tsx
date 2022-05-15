@@ -13,6 +13,7 @@ import DownloadIcon from '@mui/icons-material/Download'
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff'
 import './style.css'
 import ColorCanvasConfirmationDialog from "components/ColorCanvasConfirmationDialog"
+import {SECONDARY_COLOR} from "../../themes/constants"
 
 const marks = [
   {
@@ -59,7 +60,7 @@ const ColorCanvas: React.FC = () => {
   }
 
   const handleRenderWithImageData = () => {
-    imageData(
+    paintCanvas(
       canvas.current,
       {
         renderStatisticsCallback: setRenderStatistics,
@@ -85,7 +86,7 @@ const ColorCanvas: React.FC = () => {
             color='secondary'
             min={8}
             max={16}
-            style={{color: '#FFF'}}
+            style={{color: '#FFFFFF'}}
             classes={{markLabel: 'color-canvas-slider-mark-label'}}
             value={breakSize}
             onChange={(e, value) => {
@@ -127,7 +128,7 @@ const ColorCanvas: React.FC = () => {
       </Box>
       <Box marginY={4}>
         {!!renderStatistics && (
-          <Typography color={'#D1D0CF'} marginBottom={2}>
+          <Typography color={SECONDARY_COLOR} marginBottom={2}>
             Render time: ~ {renderStatistics.renderTime} ms <br/>
             Discrete colors: {renderStatistics.discretePixels} <br/>
             Dimensions: {renderStatistics.dimensions} <br/>
@@ -153,7 +154,7 @@ const powerOfTwo = (number: number): boolean => {
   return Math.log2(number) % 1 === 0
 }
 
-const imageData = (canvas: HTMLCanvasElement | null, options: {renderStatisticsCallback?: (stats: IRenderStatistics) => void, reverse?: boolean, breakSize: number}): IRenderStatistics | undefined => {
+const paintCanvas = (canvas: HTMLCanvasElement | null, options: {renderStatisticsCallback?: (stats: IRenderStatistics) => void, breakSize: number}): IRenderStatistics | undefined => {
   if (!canvas) {
     console.warn('Cannot retrieve canvas element')
     return
