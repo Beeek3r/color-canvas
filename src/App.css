@@ -1,0 +1,15 @@
+.app {
+  text-align: center;
+  justify-content: center;
+  background-color: #01263E;
+  display: flex;
+}
+
+.container {
+  margin-top: 300px;
+}
+
+.body {
+  background-color: #01263E;
+}
+
