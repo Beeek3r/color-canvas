@@ -39,4 +39,4 @@ application.
 2. Run `npm start`
 
 ### Screenshots
-![alt text](https://imgur.com/a/NO1xeSB)
+![Alt text](https://i.imgur.com/yRxrNYN.png "Screenshot #1")
