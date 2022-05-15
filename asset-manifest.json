@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/color-canvas/static/css/main.c27a5207.css",
-    "main.js": "/color-canvas/static/js/main.69f22907.js",
+    "main.js": "/color-canvas/static/js/main.458e2afa.js",
     "static/js/787.e54eb26b.chunk.js": "/color-canvas/static/js/787.e54eb26b.chunk.js",
     "index.html": "/color-canvas/index.html",
     "main.c27a5207.css.map": "/color-canvas/static/css/main.c27a5207.css.map",
-    "main.69f22907.js.map": "/color-canvas/static/js/main.69f22907.js.map",
+    "main.458e2afa.js.map": "/color-canvas/static/js/main.458e2afa.js.map",
     "787.e54eb26b.chunk.js.map": "/color-canvas/static/js/787.e54eb26b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c27a5207.css",
-    "static/js/main.69f22907.js"
+    "static/js/main.458e2afa.js"
   ]
 }
