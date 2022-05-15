@@ -177,6 +177,7 @@ const paintCanvas = (canvas: HTMLCanvasElement | null, options: {renderStatistic
   const t0 = new Date().getTime()
   let x = 0
   let y = 0
+  let discretePixels = 0
 
   /*
     Loop over every possible combination of RGB but make skips of <breakSize: number> Eg: Break Size: 8
@@ -194,6 +195,7 @@ const paintCanvas = (canvas: HTMLCanvasElement | null, options: {renderStatistic
           x = 0
           y += 1
         }
+        discretePixels++
         x++
         const off = (y * id.width + x) * 4
         pixels[off] = r
@@ -208,8 +210,7 @@ const paintCanvas = (canvas: HTMLCanvasElement | null, options: {renderStatistic
   ctx.putImageData(id, 0, 0)
   const t1 = new Date().getTime()
   const renderTime = (t1 - t0)
-  const discretePixels = Math.pow(Math.floor(256/options.breakSize), 3)
-  const dimensions =  `${!powerOfTwo(options.breakSize) ? '~' : ''} 256 x ${Math.ceil(discretePixels / 256)}` // Add equivalence symbol for non^2 numbers for accuracy
+  const dimensions =  `${!powerOfTwo(options.breakSize) ? '~' : ''} 256 x ${Math.ceil(discretePixels / 256)}` // Add equivalence symbol for non log base 2 numbers for accuracy
 
   // Callback function that will take in some basic statistics
   if (options?.renderStatisticsCallback) {
